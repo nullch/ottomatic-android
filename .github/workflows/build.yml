@@ -22,8 +22,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up NDK & CMake
-        uses: android-actions/setup-android@v3
+      - name: Install Android SDK components
+        run: |
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" "platforms;android-35" "ndk;27.0.12077973" "cmake;3.22.1"
 
       - name: Run setup script
         run: |
