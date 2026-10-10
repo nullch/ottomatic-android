@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pad_jump">HOPP</string>
+    <string name="pad_punch">SLAG</string>
+    <string name="pad_shoot">SKOTT</string>
+    <string name="pad_prev">FÖREG.</string>
+    <string name="pad_next">NÄSTA</string>
+    <string name="pad_pause">PAUS</string>
+    <string name="pad_back">TILLBAKA</string>
+    <string name="pad_cam">KAMERA</string>
+</resources>

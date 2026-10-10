@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pad_jump">SPRINGEN</string>
+    <string name="pad_punch">SCHLAG</string>
+    <string name="pad_shoot">SCHIEßEN</string>
+    <string name="pad_prev">ZURÜCK</string>
+    <string name="pad_next">WEITER</string>
+    <string name="pad_pause">PAUSE</string>
+    <string name="pad_back">ZURÜCK</string>
+    <string name="pad_cam">KAMERA</string>
+</resources>

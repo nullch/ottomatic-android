@@ -1,0 +1,45 @@
+diff --git a/src/SoundMixer/cmixer.cpp b/src/SoundMixer/cmixer.cpp
+index 9a6b087..b54bc8e 100644
+--- a/src/SoundMixer/cmixer.cpp
++++ b/src/SoundMixer/cmixer.cpp
+@@ -213,6 +213,7 @@ void Mixer::Process(SDL_AudioStream* stream, int len)
+ 	memset(pcmmixbuf, 0, len * sizeof(pcmmixbuf[0]));
+ 
+ 	// Process active sources
++	std::vector<std::function<void()>> onCompleteToCall;
+ 	Lock();
+ 	for (auto si = sources.begin(); si != sources.end();)
+ 	{
+@@ -221,6 +222,11 @@ void Mixer::Process(SDL_AudioStream* stream, int len)
+ 		// Remove source from list if it is no longer playing
+ 		if (s.state != CM_STATE_PLAYING)
+ 		{
++			if (s.onComplete != nullptr)
++			{
++				onCompleteToCall.push_back(s.onComplete);
++				s.onComplete = nullptr;
++			}
+ 			s.active = false;
+ 			si = sources.erase(si);
+ 		}
+@@ -231,6 +237,11 @@ void Mixer::Process(SDL_AudioStream* stream, int len)
+ 	}
+ 	Unlock();
+ 
++	for (auto& cb : onCompleteToCall)
++	{
++		cb();
++	}
++
+ 	// Copy internal buffer to destination and clip
+ 	for (int i = 0; i < len; i++)
+ 	{
+@@ -368,8 +379,6 @@ void Source::Process(int len)
+ 			if (!loop)
+ 			{
+ 				state = CM_STATE_STOPPED;
+-				if (onComplete != nullptr)
+-					onComplete();
+ 				break;
+ 			}
+ 		}

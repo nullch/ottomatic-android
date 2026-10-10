@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Otto Matic</string>
+    <string name="select_language_title">Select Language / Выберите язык</string>
+    <string name="pad_jump">JUMP</string>
+    <string name="pad_punch">PUNCH</string>
+    <string name="pad_shoot">SHOOT</string>
+    <string name="pad_prev">PREV</string>
+    <string name="pad_next">NEXT</string>
+    <string name="pad_pause">PAUSE</string>
+    <string name="pad_back">BACK</string>
+    <string name="pad_cam">CAM</string>
+</resources>

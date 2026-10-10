@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pad_jump">SAUTER</string>
+    <string name="pad_punch">COUP</string>
+    <string name="pad_shoot">TIRER</string>
+    <string name="pad_prev">PRÉC.</string>
+    <string name="pad_next">SUIV.</string>
+    <string name="pad_pause">PAUSE</string>
+    <string name="pad_back">RETOUR</string>
+    <string name="pad_cam">CAM</string>
+</resources>

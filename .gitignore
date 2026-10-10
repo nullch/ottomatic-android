@@ -1,0 +1,32 @@
+# Build outputs
+*.apk
+*.aab
+*.so
+*.aar
+.gradle/
+build/
+app/build/
+app/.cxx/
+captures/
+.externalNativeBuild/
+
+# Keep the Gradle wrapper (needed to build with ./gradlew)
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+.navigation/
+local.properties
+
+# Dependencies fetched by setup.sh / setup.bat (not stored in this repo)
+third_party/
+
+# Game data is fetched from upstream by setup (do not commit)
+/Data/
+
+# OS / temp files
+.DS_Store
+Thumbs.db
+*.log
+*.patch.tmp
